@@ -13,6 +13,7 @@ Deberiamos subir el PDF del enunciado?
 
 - [Giuliano Carlachiani](https://github.com/giuliano2505/)
 - [Valentina Balverdi](https://github.com/ValentinaBalverdi)
+- [Agustina Yafusco](https://github.com/AgusG13)
 
 ## Instrucciones
 
