@@ -16,16 +16,23 @@ Deberiamos subir el PDF del enunciado?
 - [Agustina Yafusco](https://github.com/AgusG13)
 
 ## Instrucciones
-
-Para buildear el contenedor se debe ejecutar lo siguiente:
+# Contenedor GENERADOR
+Para buildear el contenedor GENERADOR se debe ejecutar lo siguiente:
 
 ```bash
     ACA IRIA EL CODIGO PARA BUILDEAR
 ```
     
-
-Para correr el contenedor se debe ejecutar lo siguiente:
+# Contenedor USUARIO
+Para buildear el contenedor GENERADOR se debe ejecutar lo siguiente:
 
 ```bash
-    ACA IRIA EL CODIGO PARA CORRERLO
+    ACA IRIA EL CODIGO PARA BUILDEAR
+```
+# Para correr los contenedores
+
+
+```bash
+    ACA IRIA EL CODIGO PARA CORRERL EL GENERADOR
+    ACA PARA CORRER EL USUARIO
 ```
