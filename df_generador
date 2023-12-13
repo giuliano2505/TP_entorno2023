@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y imagemagick ffmpeg
 WORKDIR /app
 
 # Agrega al contenedor la carpeta scripts
-ADD scripts/genereador/generador.sh generador.sh
+ADD scripts/generador/generador.sh generador.sh
 
 # TODO: Agregar generador.sh al crontab
 
