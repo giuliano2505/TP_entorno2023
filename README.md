@@ -20,7 +20,7 @@ Deberiamos subir el PDF del enunciado?
 Para buildear el contenedor GENERADOR se debe ejecutar lo siguiente:
 
 ```bash
-    ACA IRIA EL CODIGO PARA BUILDEAR
+    docker build -f df_generador -t generador .
 ```
     
 # Contenedor USUARIO
