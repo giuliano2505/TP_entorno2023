@@ -76,21 +76,21 @@ Y asegurarse al hacer un git clone, que se usa el link de SSH del repo
 
 
 
-## Instrucciones
-# Contenedor GENERADOR
+# Instrucciones
+## Contenedor GENERADOR
 Para buildear el contenedor GENERADOR se debe ejecutar lo siguiente:
 
 ```bash
     docker build -f df_generador -t generador .
 ```
     
-# Contenedor USUARIO
+## Contenedor USUARIO
 Para buildear el contenedor GENERADOR se debe ejecutar lo siguiente:
 
 ```bash
     ACA IRIA EL CODIGO PARA BUILDEAR
 ```
-# Para correr los contenedores
+## Para correr los contenedores
 
 
 ```bash
