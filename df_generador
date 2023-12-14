@@ -4,7 +4,7 @@
 FROM ubuntu:20.04
 
 # Agregamos las dependecias necesarias
-RUN apt-get update && apt-get install -y imagemagick ffmpeg
+RUN apt-get update && apt-get install -y cron imagemagick ffmpeg
 
 # Seteamos como directorio de trabajo la carpeta /app (se crea automaticamente)
 WORKDIR /app
@@ -12,6 +12,7 @@ WORKDIR /app
 # Agrega al contenedor la carpeta scripts
 ADD scripts/generador/generador.sh generador.sh
 
-# TODO: Agregar generador.sh al crontab
+# Agregamos generador.sh al crontab (al final de otras tareas que hubiere)
+RUN crontab -l | { cat; echo "* * * * * bash /app/generador.sh"; } | crontab -
 
-
+ENTRYPOINT [ "cron", "-f" ]
