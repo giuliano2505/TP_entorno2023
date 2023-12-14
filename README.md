@@ -81,7 +81,7 @@ Y asegurarse al hacer un git clone, que se usa el link de SSH del repo
 Para buildear el contenedor GENERADOR se debe ejecutar lo siguiente:
 
 ```bash
-    docker build -f df_generador -t generador .
+    docker build -f df_generador -t im_generador .
 ```
     
 ## Contenedor USUARIO
@@ -95,6 +95,6 @@ Para buildear el contenedor GENERADOR se debe ejecutar lo siguiente:
 
 ```bash
     mkdir outputs_gen
-    docker run -d --mount type=bind,src=$(pwd)/outputs_gen,dst=/app/outputs generador
+    docker run -d --name generador --mount type=bind,src=$(pwd)/outputs_gen,dst=/app/outputs im_generador
     ACA PARA CORRER EL USUARIO
 ```

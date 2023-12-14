@@ -13,6 +13,6 @@ WORKDIR /app
 ADD scripts/generador/generador.sh generador.sh
 
 # Agregamos generador.sh al crontab (al final de otras tareas que hubiere)
-RUN crontab -l | { cat; echo "* * * * * bash /app/generador.sh"; } | crontab -
+RUN echo "* * * * * root /app/generador.sh > /proc/1/fd/1 2>/proc/1/fd/2" >> /etc/crontab
 
 ENTRYPOINT [ "cron", "-f" ]
