@@ -94,6 +94,7 @@ Para buildear el contenedor GENERADOR se debe ejecutar lo siguiente:
 
 
 ```bash
-    ACA IRIA EL CODIGO PARA CORRERL EL GENERADOR
+    mkdir outputs_gen
+    docker run -d --mount type=bind,src=$(pwd)/outputs_gen,dst=/app/outputs generador
     ACA PARA CORRER EL USUARIO
 ```
