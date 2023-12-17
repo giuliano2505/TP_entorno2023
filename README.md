@@ -88,8 +88,9 @@ Para buildear el contenedor GENERADOR se debe ejecutar lo siguiente:
 Para buildear el contenedor GENERADOR se debe ejecutar lo siguiente:
 
 ```bash
-    ACA IRIA EL CODIGO PARA BUILDEAR
+    docker build -f df_usuario -t im_usuario .
 ```
+
 ## Para correr los contenedores agregamos un script "run.sh"
 
 
