@@ -21,6 +21,12 @@ USORAM=$(free | grep Mem | awk '{print $3/$2 * 100.0}')
 #y le restamos una para eliminar el encabezado
 NUMPROC=$(( $(ps -e | wc -l) - 1 ))
 
+#Espacio libre
+#Llamamos a df con las opciones -h (formato "humano") y / que indica que solo donde esta la raiz
+#tail toma todas la lineas a partir de la segunda (Para eliminar el encabezado)
+#awk imprime el tercer campo que es el espacio libre
+LIBRE=$(df -h /  | tail -n +2 | awk '{print $3}')
+
 
 
 exit 0
