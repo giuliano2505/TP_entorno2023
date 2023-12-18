@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir -p outputs_gen outputs_usuario 
+mkdir -p outputs_gen outputs_usuario textos
 
  docker run -d --rm \
  	--name generador \
@@ -11,4 +11,5 @@ mkdir -p outputs_gen outputs_usuario
  	--name usuario \
  	--mount type=bind,src=$(pwd)/outputs_gen,dst=/app/inputs \
  	--mount type=bind,src=$(pwd)/outputs_usuario,dst=/app/outputs \
+ 	--mount type=bind,src=$(pwd)/textos,dst=/app/textos \
  	im_usuario
