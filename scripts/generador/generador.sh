@@ -1,6 +1,5 @@
 #!/bin/bash
 
-echo "GENERADOR FUNCIONANDO"
 # Función para generar archivos de texto
 generate_text_file() {
     base64 /dev/urandom | head -c 500 > "$1"
@@ -19,24 +18,20 @@ generate_image_file() {
 # Generar un número aleatorio para decidir qué tipo de archivo crear
 random_number=$((RANDOM % 3))
 
-# Nombre del archivo
-output_file="output_file"
 
 # Dependiendo del número aleatorio, llamar a la función correspondiente
 case $random_number in
     0)
-        generate_text_file "${output_file}.txt"
-        echo "Se ha generado un archivo de texto: ${output_file}.txt"
+        generate_text_file "output_file"
         ;;
     1)
-        generate_sound_file "${output_file}.wav"
-        echo "Se ha generado un archivo de sonido: ${output_file}.wav"
+        generate_sound_file "output_file"
         ;;
     2)
-        generate_image_file "${output_file}.png"
-        echo "Se ha generado un archivo de imagen: ${output_file}.png"
+        generate_image_file "output_file"
         ;;
     *)
-        echo "Número aleatorio fuera de rango."
         ;;
 esac
+
+mv "output_file" $(md5sum "output_file" | awk '{print $1}')
