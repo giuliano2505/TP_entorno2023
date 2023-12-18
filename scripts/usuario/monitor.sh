@@ -27,6 +27,8 @@ NUMPROC=$(( $(ps -e | wc -l) - 1 ))
 #awk imprime el tercer campo que es el espacio libre
 LIBRE=$(df -h /  | tail -n +2 | awk '{print $3}')
 
+BUFFER="CPU: $USOCPU\nRAM: $USORAM%\nProcesos: $NUMPROC\nEspacio libre: $LIBRE"
 
+echo -e "$BUFFER" > "outputs/report_$TIMESTAMP.txt"
 
 exit 0
