@@ -15,6 +15,11 @@ USOCPU=$(top -b -n 1 | grep "%Cpu(s)" | awk '{print $2}')
 #Tomamos el tercer campo(mem en uso), lo dividimos por el segundo (memtotal)y lo multiplicamos por 100
 USORAM=$(free | grep Mem | awk '{print $3/$2 * 100.0}')
 
+#Cantidad de procesos
+#Llamamos a ps con la opcion e para que liste todos los procesos, 
+#Se lo pasamos a wc, para que cuente la cantidad de lineas
+#y le restamos una para eliminar el encabezado
+NUMPROC=$(( $(ps -e | wc -l) - 1 ))
 
 
 
