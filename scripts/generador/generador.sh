@@ -1,5 +1,6 @@
 #!/bin/bash
 
+ARCHIVOSALIDA="/app/outputs/output_file"
 # Función para generar archivos de texto
 generate_text_file() {
     base64 /dev/urandom | head -c 500 > "$1"
@@ -16,22 +17,23 @@ generate_image_file() {
 }
 
 # Generar un número aleatorio para decidir qué tipo de archivo crear
-random_number=$((RANDOM % 3))
+TIPOARCHIVO=$(shuf -i 0-2 -n 1)
 
 
 # Dependiendo del número aleatorio, llamar a la función correspondiente
-case $random_number in
+case $TIPOARCHIVO in
     0)
-        generate_text_file "output_file"
+        generate_text_file "$ARCHIVOSALIDA"
         ;;
     1)
-        generate_sound_file "output_file"
+        generate_sound_file "$ARCHIVOSALIDA"
         ;;
     2)
-        generate_image_file "output_file"
+        generate_image_file "$ARCHIVOSALIDA"
         ;;
     *)
         ;;
 esac
 
-mv "output_file" $(md5sum "output_file" | awk '{print $1}')
+#Renombramos el archivo de salida con su hash
+mv "$ARCHIVOSALIDA" "/app/outputs/$(md5sum "$ARCHIVOSALIDA" | awk '{print $1}')"
