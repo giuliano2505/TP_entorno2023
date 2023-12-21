@@ -13,6 +13,8 @@ ARCHIVO=$1
 #Si o si tiene que terminar con un dominio de, al menos, dos letras
 CORREOS=$(grep -E -o '\b[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-z|A-Z]{2,}\b' "$ARCHIVO")
 
+#LOs ordenamos y filtramos para que sean unicos
+ORDENADOS=$(echo -e "$CORREOS" | sort -u)
 
-echo -e "$CORREOS"
+echo -e "$ORDENADOS"
 
