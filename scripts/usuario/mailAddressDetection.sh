@@ -14,5 +14,5 @@ ARCHIVO=$1
 CORREOS=$(grep -E -o '\b[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-z|A-Z]{2,}\b' "$ARCHIVO")
 
 
-echo CORREOS
+echo -e "$CORREOS"
 
