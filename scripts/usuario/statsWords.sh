@@ -2,8 +2,8 @@
 
 ARCHIVO=$1
 
-#Reemplazamos los espacios en blanco por saltos de linea y eliminamos los signos de puntuacion
-TEXTO=$(cat "$ARCHIVO" | tr -d '.,:;()¡!?¿°"$%')
+#Eliminamos los signos de puntuacion y reemplazamos los espacios por saltos de linea
+TEXTO=$(cat "$ARCHIVO" | tr -d '.,:;()¡!?¿°"$%' | tr -s '[:space:]' '\n' )
 
 #Asignamos como longitud más larga 0 y como más corta la de la primer palabra
 MASLARGA=0
