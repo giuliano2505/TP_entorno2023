@@ -1,12 +1,10 @@
 #!/bin/bash
 
 #Carpeta de entrada
-#CARPETAENTRADA="/app/inputs"
-CARPETAENTRADA="./test"
+CARPETAENTRADA="/app/inputs"
 
 #Carpeta de salida
-#CARPETASALIDA="/app/outputs/"
-CARPETASALIDA="./salida/"
+CARPETASALIDA="/app/outputs/"
 
 mkdir -p "$CARPETASALIDA/img"
 mkdir -p "$CARPETASALIDA/snd"
@@ -33,11 +31,6 @@ do
     else
         continue
     fi
-  fi
-
-
-#####
-
 
     # Construir el nuevo nombre con la ruta de salida
     RUTASALIDA="$CARPETASALIDA$TIPO$CONTADOR.png"
