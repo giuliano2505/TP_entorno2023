@@ -42,7 +42,7 @@ do
       RUTASALIDA="$CARPETASALIDA$SUBCARPETA$TIPO$CONTADOR.png"
     done
 
-    cp "$ARCHIVO" "$RUTASALIDA"
+    mv "$ARCHIVO" "$RUTASALIDA"
     
   fi
 done
