@@ -4,7 +4,7 @@
 FROM ubuntu:20.04
 
 # Agregamos las dependecias necesarias
-#RUN apt-get update && apt-get install -y 
+RUN apt-get update && apt-get install -y file
 
 # Seteamos como directorio de trabajo la carpeta /app (se crea automaticamente)
 WORKDIR /app
