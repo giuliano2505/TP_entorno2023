@@ -25,14 +25,17 @@ TIPOARCHIVO=$(shuf -i 0-2 -n 1)
 case $TIPOARCHIVO in
     0)
         generate_text_file "$ARCHIVOSALIDA.txt"
+        chmod 777"$ARCHIVOSALIDA.txt"
         mv "$ARCHIVOSALIDA.txt" "/app/outputs/$(md5sum "$ARCHIVOSALIDA.txt" | awk '{print $1}')"
         ;;
     1)
         generate_sound_file "$ARCHIVOSALIDA.wav"
+        chmod 777"$ARCHIVOSALIDA.wav"
         mv "$ARCHIVOSALIDA.wav" "/app/outputs/$(md5sum "$ARCHIVOSALIDA.wav" | awk '{print $1}')"
         ;;
     2)
         generate_image_file "$ARCHIVOSALIDA.png"
+        chmod 777"$ARCHIVOSALIDA.png"
         mv "$ARCHIVOSALIDA.png" "/app/outputs/$(md5sum "$ARCHIVOSALIDA.png" | awk '{print $1}')"
         ;;
     *)
