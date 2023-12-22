@@ -24,11 +24,14 @@ do
     tipo_archivo=$(file -b --mime-type "$ARCHIVO")
 
     #DEBERIAMOS ELEGIR img/imagen , snd/sonido , txt/texto
-    if [[ $tipo_archivo == *"text"* ]]; then
+    if [[ $tipo_archivo == *"ASCII"* ]]; then
         mv "$ARCHIVO" "$CARPETASALIDA/txt"
-    elif [[ $tipo_archivo == *"image"* ]]; then
+    elif [[ $tipo_archivo == *"PNG"* ]]; then
         mv "$ARCHIVO" "$CARPETASALIDA/img"
-    else [[ $tipo_archivo == *"audio"* ]]; then
+    elif [[ $tipo_archivo == *"WAVE"* ]]; then
         mv "$ARCHIVO" "$CARPETASALIDA/snd"
-
-    SUBCARPETA=img/imagen  
+    else
+        echo "Archivo no clasificado: $ARCHIVO"
+    fi
+  fi
+    #SUBCARPETA=img/imagen
