@@ -34,3 +34,22 @@ do
         continue
     fi
   fi
+
+
+#####
+
+
+    # Construir el nuevo nombre con la ruta de salida
+    RUTASALIDA="$CARPETASALIDA$TIPO$CONTADOR.png"
+
+    # Verificar si el nuevo nombre ya existe
+    while [ -e "$RUTASALIDA" ]
+    do
+      ((CONTADOR++))
+      RUTASALIDA="$CARPETASALIDA$SUBCARPETA$TIPO$CONTADOR.png"
+    done
+
+    cp "$ARCHIVO" "$RUTASALIDA"
+    
+  fi
+done
