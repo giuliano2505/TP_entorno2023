@@ -11,9 +11,9 @@ Deberiamos subir el PDF del enunciado?
 
 ## Autores
 
-- [Giuliano Carlachiani](https://github.com/giuliano2505/)
-- [Valentina Balverdi](https://github.com/ValentinaBalverdi)
-- [Agustina Yafusco](https://github.com/AgusG13)
+- [Giuliano Carlachiani](https://github.com/giuliano2505/) (C-7308/3)
+- [Valentina Balverdi](https://github.com/ValentinaBalverdi) (B-6588/9)
+- [Agustina Yafusco](https://github.com/AgusG13) (Y-0358/1)
 
 ## Previamente
 En primer lugar instalamos git:
