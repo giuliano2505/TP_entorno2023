@@ -30,5 +30,5 @@ LIBRE=$(df -h /  | tail -n +2 | awk '{print $3}')
 BUFFER="CPU: $USOCPU\nRAM: $USORAM%\nProcesos: $NUMPROC\nEspacio libre: $LIBRE"
 
 echo -e "$BUFFER" > "outputs/report_$TIMESTAMP.txt"
-
+echo -e "$BUFFER"
 exit 0
