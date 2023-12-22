@@ -11,9 +11,9 @@ while true; do
 read option
 
  case $option in
-	1)./clasificador.sh;;
-	2)./monitor.sh;;
-	3)./analizador.sh;;
+	1)./scripts/clasificador.sh;;
+	2)./scripts/monitor.sh;;
+	3)./scripts/analizador.sh;;
 	4)exit;;
 	*)echo "Opcion invalida"
  esac		
