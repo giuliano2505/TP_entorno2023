@@ -8,8 +8,7 @@ while [ "$FILE_EXIST" != true ]; do
     echo -"Tenga en cuenta que solo se pueden procesar archivos dentro de /app/textos"
     read ARCHIVO
 
-    #RUTA="/app/textos/$ARCHIVO"
-    RUTA="./test/$ARCHIVO"
+    RUTA="/app/textos/$ARCHIVO"
     # Verificar si la ruta es un archivo regular
     if [ -f "$RUTA" ]; then
         FILE_EXIST=true
