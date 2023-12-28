@@ -13,10 +13,12 @@ function esPalindromo {
 ARCHIVO=$1
 
 #Eliminamos primero los caracteres especiales del idioma (para poder buscar palindromos)
+#Esto lo tuvimos que cambiar porque sed no funcionaba dentro del docker
+#iconv convierte los caracteres utf-8 de entrada en el ascii mas cercano (por TRANSLIT)
 #Luego pasamos minusculas todo el texto
 #Eliminamos signos de puntuacion
 #Reemplazamos los espacios con salto de linea
-TEXTO=$(cat "$ARCHIVO" | sed 'y/áéíóúüÁÉÍÓÚÜ/aeiouuAEIOUU/' |tr '[:upper:]' '[:lower:]' | tr -d '.,:;()¡!?¿°"$%' | tr -s '[:space:]' '\n' )
+TEXTO=$(cat "$ARCHIVO" |  iconv -f utf-8 -t ascii//TRANSLIT |tr '[:upper:]' '[:lower:]' | tr -d '.,:;()¡!?¿°"$%' | tr -s '[:space:]' '\n' )
 
 for PALABRA in $TEXTO; do
     if esPalindromo "$PALABRA"; then
