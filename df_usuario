@@ -4,13 +4,12 @@
 FROM ubuntu:20.04
 
 # Agregamos las dependecias necesarias
-RUN apt-get update && apt-get install -y file
+RUN apt-get update && apt-get install -y file bc
 
 # Seteamos como directorio de trabajo la carpeta /app (se crea automaticamente)
 WORKDIR /app
 
 # Agrega al contenedor la carpeta scripts
 ADD scripts/usuario scripts
-
 
 ENTRYPOINT [ "/bin/bash", "./scripts/menu.sh" ]
