@@ -26,25 +26,25 @@ do
     #DEBERIAMOS ELEGIR img/imagen , snd/sonido , txt/texto
     if echo "$tipo_archivo" | grep -q "text"; then
         SUBCARPETA="txt/texto"
-        EXTENSION=".txt"
+        EXTENSION="txt"
     elif echo "$tipo_archivo" | grep -q "image"; then
         SUBCARPETA="img/imagen"
-        EXTENSION=".png"
+        EXTENSION="png"
     elif echo "$tipo_archivo" | grep -q "audio"; then
         SUBCARPETA="snd/sonido"
-        EXTENSION=".wav"
+        EXTENSION="wav"
     else
         continue
     fi
 
     # Construir el nuevo nombre con la ruta de salida
-    RUTASALIDA="$CARPETASALIDA$SUBCARPETA$TIPO$CONTADOR.$EXTENSION"
+    RUTASALIDA="$CARPETASALIDA$SUBCARPETA$CONTADOR.$EXTENSION"
 
     # Verificar si el nuevo nombre ya existe
     while [ -e "$RUTASALIDA" ]
     do
       ((CONTADOR++))
-      RUTASALIDA="$CARPETASALIDA$SUBCARPETA$TIPO$CONTADOR.$EXTENSION"
+      RUTASALIDA="$CARPETASALIDA$SUBCARPETA$CONTADOR.$EXTENSION"
     done
 
     mv "$ARCHIVO" "$RUTASALIDA"
