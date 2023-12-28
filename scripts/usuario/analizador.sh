@@ -32,9 +32,9 @@ while true; do
 read option
 
  case $option in
-	1)./statsWords.sh "$RUTA";;
-	2)./palindromeDetection.sh "$RUTA";;
-	3)./mailAddressDetection.sh "$RUTA";;
+	1)./scripts/statsWords.sh "$RUTA";;
+	2)./scripts/palindromeDetection.sh "$RUTA";;
+	3)./scripts/mailAddressDetection.sh "$RUTA";;
 	4)exit;;
 	*)echo -e "Opcion invalida\n"
  esac		
